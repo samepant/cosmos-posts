@@ -1,13 +1,13 @@
 # DRAFT
 
-This post will show you how to install and run a local chain using the Cosmos-sdk, and how to connect to it using the Keplr wallet. When it's all set up, you will have your own little test net, so you won't have to worry about finding a faucet to get gas to test your new app. All you need for this tutorial is a Command Line, an internet connection and a working Go install on your machine.
+This post will show you how to install and run a local chain using the Cosmos-sdk, and how to connect to it using the Keplr wallet. When it's all set up, you will have your own little test net, so you won't have to worry about finding a faucet to get gas to test your new app. All you need for this tutorial is a Command Line, an internet connection and a working Go installation on your machine.
 
 ## Setup dev environment
 
-1. Clone the cosmos-hub git repo, I like to [checkout the latest release](https://github.com/cosmos/cosmos-sdk/releases)
+1. Clone the [cosmos-hub git repo](https://github.com/cosmos/cosmos-sdk) `git@github.com:cosmos/cosmos-sdk.git`. I also like to [checkout the latest release](https://github.com/cosmos/cosmos-sdk/releases)
    `git checkout tags/v0.45.4`
 
-2. Make sure [Go is installed on your machine](https://go.dev/doc/install). I like to check with: `go version`
+2. Make sure [Go is installed on your machine](https://go.dev/doc/install). I like to check with: `go version`. At the time of this writing, at least version `1.17` of golang is required.
 
 3. Run `make build` in the comos-sdk repo. This will create the `build` folder in your `cosmos-sdk` directory.
 
@@ -145,10 +145,9 @@ Once that command goes through, open Keplr and make sure you see the tokens refl
 
 ### Footnotes
 
-If you've previously created a chain on your local machine, you may need to reset the database before you create a new one:
+If you've previously created a chain on your local machine, you may need to reset the database before you create a new one (THIS WILL REMOVE ANY CHAIN DATA FROM PREVIOUS INITIALIZATIONS):
 
-1. In your home directory, CAREFULLY run:
-   `rm -rf ./.simapp`
+1. In your home directory, remove any `.simapp` directory
 
 2. In the `cosmos-sdk/build` directory, run:
-   `./simd unsafe-reset-all`
+   `./simd tendermint unsafe-reset-all`
