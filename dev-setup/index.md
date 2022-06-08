@@ -4,7 +4,7 @@ This post will show you how to install and run a local chain using the Cosmos-sd
 
 ## Setup dev environment
 
-1. Clone the [cosmos-hub git repo](https://github.com/cosmos/cosmos-sdk) `git@github.com:cosmos/cosmos-sdk.git`. I also like to [checkout the latest release](https://github.com/cosmos/cosmos-sdk/releases)
+1. Clone the [cosmos-hub git repo](https://github.com/cosmos/cosmos-sdk) `git@github.com:cosmos/cosmos-sdk.git`. I also like to [checkout the latest release](https://github.com/cosmos/cosmos-sdk/releases), by running:
 
 ```bash
 git fetch
@@ -85,7 +85,7 @@ INF Starting RPC HTTP server on [::]:1317 module=api-server
 
 ## Add your test chain to Keplr
 
-To actually use your running test chain in your app, you will need to add it to the Keplr wallet. Keplr doesn't expose a way to do this in the extension, but does expose a javascript method that makes it pretty straightforward — `window.keplr.experimentalSuggestChain()`. You can paste the following into a browser console, or use this app for a more approachable experience.
+To actually use your running test chain in your app, you will need to add it to the Keplr wallet. Keplr doesn't expose a way to do this in the extension, but does expose a javascript method that makes it pretty straightforward — `window.keplr.experimentalSuggestChain()`. You can paste the following into a browser console. If you customized any of the values in this tutorial, be sure to change them in the script below:
 
 ```javascript
 try {
@@ -142,7 +142,9 @@ try {
 }
 ```
 
-When your Keplr wallet has succesfully added the test chain, you will be able to see an address for the chain and receive tokens from other accounts on the chain (which at the moment will only be our `test-validator` account from above).
+This will open a Keplr popup asking if you want to add the chain.
+
+When your Keplr wallet has succesfully added the test chain, you will be able to see an address for the chain and receive tokens from other accounts (which at the moment will only be our `test-validator` account from above).
 
 To send some tokens from the validator account to your new address use this command in your command line (the test net must be running in another window).
 
@@ -151,6 +153,8 @@ To send some tokens from the validator account to your new address use this comm
 ```
 
 Once that command goes through, open Keplr and make sure you see the tokens reflected in your wallet balance.
+
+Congrats! You're now setup to build an app against your local testnet. Checkout [Cosmjs](https://github.com/cosmos/cosmjs) for examples and docs on building cosmos client apps.
 
 ### Footnotes
 
