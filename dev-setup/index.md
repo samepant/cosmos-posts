@@ -154,7 +154,11 @@ To send some tokens from the validator account to your new address use this comm
 
 Once that command goes through, open Keplr and make sure you see the tokens reflected in your wallet balance.
 
-Congrats! You're now setup to build an app against your local testnet. Checkout [Cosmjs](https://github.com/cosmos/cosmjs) for examples and docs on building cosmos client apps.
+Congrats! You're now setup to build an app against your local testnet.
+
+## Building Client Applications
+
+Checkout [Cosmjs](https://github.com/cosmos/cosmjs) for examples and docs on building cosmos front ends, and [join the Discord](https://discord.gg/cosmosnetwork) to chat and find out more.
 
 ### Footnotes
 
